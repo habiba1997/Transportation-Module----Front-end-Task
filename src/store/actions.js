@@ -8,7 +8,8 @@ export const getCompanyList =  () => {
 			payload: {
 				url: "/api/TransportationCompany/All",
 				onSuccess: "callSuccess", 
-				onError: "callFailed"
+				onError: "callFailed",
+				headers:  {'Content-Type':  'application/json','Access-Control-Allow-Origin' :'*'}
 			  }
 		});
 };
@@ -23,6 +24,7 @@ export const getCompanyById =  (id) => {
 				url: "/api/TransportationCompany/GetById?id="+id,
 				onSuccess: "callSuccess", 
 				onError: "callFailed",
+				headers:  {'Content-Type':  'application/json','Access-Control-Allow-Origin' :'*'}
 			  }
 		});
 };
