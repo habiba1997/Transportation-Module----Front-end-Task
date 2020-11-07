@@ -1,4 +1,4 @@
-import combineReducers from './reducers/reducer_index';
+import combineReducers from './reducers/combined_reducer';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from './middleware/logger';

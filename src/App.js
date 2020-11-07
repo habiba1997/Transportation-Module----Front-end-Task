@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Transportation from './components/transportation';
 
 
@@ -11,5 +11,6 @@ function App() {
   </React.Fragment>
   );
 }
+
 
 export default App;

@@ -82,10 +82,9 @@ export const clearTransportation = () =>{
 			ContactPerson_Name:"",
 			ContactPerson_TelephoneNumber:"",
 			ContactPerson_Email:"",
-			TransportationCompanyBuses:[{}]
+			TransportationCompanyBuses:[]
 		}
 	});
 };
 
 
-// {"ID":1,"Name":"شركة البركة للنقل الدولى","Address":"Jeddah","Country":198,"City":116,"TelephoneNumber":"966787813","ContactPerson_Name":"Mohammed","ContactPerson_TelephoneNumber":"966544698742","ContactPerson_Email":"mohamed@bluebus.com","TransportationCompanyBuses":[{"ID":1,"BusTypeID":1,"Brand":"Mercedes","Number_Of_Seats":50,"Number_Of_Seats_Per_Raw":4,"Total_Number_Of_Buses":1,"Bus_Layout":"https://thegateapis.azurewebsites.net/Images\\90a9b443-54a1-4769-9174-c9c6e1508888.jpg","Notes":"Very Good Bus","YearModel":2019,"Description":"Mercedes"}],"formErrors":{"Name":"","Address":"","Country":"","City":"","TelephoneNumber":"","ContactPerson_Name":"","ContactPerson_TelephoneNumber":"","ContactPerson_Email":"","TransportationCompanyBuses":""}},

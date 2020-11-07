@@ -3,7 +3,6 @@ import * as actions from '../actionTypes';
 
 
 export default function reducer(state={}, action) {
-// console.log("action: ",action);
 
 	switch (action.type) {
 		case actions.apiCallSuccess:

@@ -68,7 +68,7 @@ class Table extends Component {
             onClick={this.AddTransportation}> 
                     + Add Transportations
             </button>
-            <table className="mt-3 table table-striped">
+            <table  className="mt-3 table table-striped">
                     <thead>
                         <tr>
                             <th className="th-col" scope="col">

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import store from '../store/store';
 import * as actions from '../store/actions';
 import { Spinner } from 'react-bootstrap';
-import BusForm from './busForm';
+import BusForm from './Bus_Form';
 
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -11,14 +11,12 @@ const emailRegex = RegExp(
 const formValid = ({ formErrors, ...rest }) => {
     let valid = true;
   
-    // validate form errors being empty
     Object.values(formErrors).forEach(val => {
       val.length > 0 && (valid = false);
     });
-  
-    // validate the form was filled out
+
     Object.values(rest).forEach(val => {
-        val === null && (valid = false);
+        val===undefined && (valid = false);
     });
   
     return valid;
@@ -83,9 +81,14 @@ class Form extends Component {
         },500);
     }
 
+ 
     BusComponentLoop=()=>
     {
-        return this.state.TransportationCompanyBuses.map(bus => <BusForm key={bus.ID} bus={bus}/>); 
+        return this.state.TransportationCompanyBuses.map(bus => 
+        <BusForm key={bus.ID} 
+                 bus={bus}
+                 change={this.handleBusChange}
+                 valid={formValid}/>); 
     }
 
     handleChange = e => {
@@ -108,6 +111,12 @@ class Form extends Component {
         this.setState({ formErrors, [name]: value });
       };
 
+    handleBusChange=(state)=>{
+        let newStateTransportationArray = [...this.state.TransportationCompanyBuses];
+        let index =newStateTransportationArray.findIndex(o => o.ID === state.ID);
+        newStateTransportationArray[index] = state;
+        this.setState({TransportationCompanyBuses: newStateTransportationArray});
+    }
     render() { 
        
         let { ID,
@@ -246,37 +255,71 @@ class Form extends Component {
             </div>
             {this.BusComponentLoop()}
 
-            <button className="justify-content-end btn btn-lg btn-dark"
-                    onClick={this.props.onChanageView}>
-                    
-                       Back 
-            </button> 
-            <button className="justify-content-end btn btn-lg btn-success"
-                onClick={this.handleSubmit}>
-                    Update   
-            </button>   
+           <div className="mt-4">
+                <button className="btn-add-transport btn mr-2" onClick={this.props.onChanageView}>
+                    Back 
+                </button>
+                <button type="button" className="btn btn-add-transport mr-2" onClick={this.addTransportation}>
+                    +Add Transportation
+                </button> 
+                <button className="btn-add-transport btn" onClick={this.handleSubmit}>
+                        Update   
+                </button>  
+            </div> 
             
-            <br/>
+            
             {(showSpinner)? 
             <Spinner animation="border" />: null}
             {(updateClicked)? <span >{updateMessage} </span>: null}
+             
              
         </div>  
     );
     }
 
+addTransportation=()=>{
+    let len = this.state.TransportationCompanyBuses.length +1;
+    let newStateTransportationArray = [...this.state.TransportationCompanyBuses,{ID:len}];
+    this.setState({TransportationCompanyBuses: newStateTransportationArray});
+}
+
+returnStateObject=()=>{
+    let  { ID,
+        Name,
+        Address,
+        Country,
+        City,
+        TelephoneNumber,
+        ContactPerson_Name,
+        ContactPerson_TelephoneNumber,
+        ContactPerson_Email,
+        TransportationCompanyBuses } = this.state;
+    return   { ID,
+        Name,
+        Address,
+        Country,
+        City,
+        TelephoneNumber,
+        ContactPerson_Name,
+        ContactPerson_TelephoneNumber,
+        ContactPerson_Email,
+        TransportationCompanyBuses };
+    
+    
+}
 handleSubmit = e => {
         e.preventDefault();
         
         
         if (formValid(this.state)) {
 
-          console.log("state: ", JSON.stringify(this.state));
           this.setState({showSpinner:true,updateClicked:true});
           
 
-          if(!this.state.route) store.dispatch(actions.putCompanyTransportation(this.state));
-          else store.dispatch(actions.addCompanyTransportation(this.state));
+          console.log("state: ", JSON.stringify(this.returnStateObject()));
+
+          if(!this.state.route) store.dispatch(actions.putCompanyTransportation(this.returnStateObject()));
+          else store.dispatch(actions.addCompanyTransportation(this.returnStateObject()));
           
           setTimeout(()=>{
             let records = store.getState().records;

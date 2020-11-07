@@ -1,0 +1,77 @@
+$blue: #306c95 !important;
+$white: #fafafa !important;
+
+@mixin backgroundBlue() {
+  background-color: $blue;
+  color: $white;
+}
+
+@mixin outline($thick, $color) {
+  outline: $thick solid $color;
+}
+
+.card-header-back,
+.th-col,
+.edit {
+  @include backgroundBlue();
+}
+
+body {
+  background-color: $white;
+}
+
+.btn-add-transport {
+  @include backgroundBlue();
+  text-align: left;
+  padding: 0% 5vh;
+}
+
+.anchor_no_decoration {
+  text-decoration: none !important;
+}
+
+.checkbox,
+.form-control {
+  @include outline(2px, $blue);
+  outline-offset: -2px;
+}
+
+.form-control {
+  margin-top: -3%;
+}
+
+.row {
+  margin-top: 1%;
+}
+
+.title {
+  color: $blue;
+  font-weight: bold;
+}
+
+.error {
+  @include outline(1px, red);
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.75em;
+  display: relative;
+}
+
+.uploadDiv {
+  position: relative;
+  overflow: hidden;
+}
+
+.inputDiv {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+
+.card {
+  box-shadow: 1px 2px 1px 0px rgba(0, 0, 0, 0.5);
+}
