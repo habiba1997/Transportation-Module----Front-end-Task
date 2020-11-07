@@ -1,0 +1,98 @@
+[
+    {
+      "id": 1,
+      "email": "Eliseo@gardner.biz",
+      "status": "Initial Acceptance",
+      "major": "Medicine"
+    },
+    {
+      "id": 2,
+      "email": "Jayne_Kuhic@sydney.com",
+      "status": "Conditional Acceptance",
+      "major": "Medicine"
+    },
+    {
+      "id": 3,
+      "email": "Nikita@garfield.biz",
+      "status": "Initial Acceptance",
+      "major": "Engineering"
+    },
+    {
+      "id": 4,
+      "email": "Lew@alysha.tv",
+      "status": "Initial Acceptance",
+      "major": "Medicine"
+    },
+    {
+      "id": 5,
+      "email": "Hayden@althea.biz",
+      "status": "Conditional Acceptance",
+      "major": "Medicine"
+    },
+    {
+        "id": 6,
+        "email": "Presley.Mueller@myrl.com",
+        "status": "Conditional Acceptance",
+        "major": "Engineering"
+    },
+    {
+        "id": 7,
+        "email": "Dallas@ole.me",
+        "status": "Initial Acceptance",
+        "major": "Medicine"
+    },
+    {
+        "id": 8,
+        "email": "Mallory_Kunze@marie.org",
+        "status": "Initial Acceptance",
+        "major": "Medicine"
+    },
+    {
+        "id": 9,
+        "email": "Meghan_Littel@rene.us",
+        "status": "Initial Acceptance",
+        "major": "Pharmaceutical"
+    },
+    {
+        "id": 10,
+        "email": "Carmen@caroline.name",
+        "status": "Conditional Acceptance",
+        "major": "Pharmaceutical"
+    },
+    {
+        "id": 11,
+        "email": "Eliseo@gardner.biz",
+        "status": "Initial Acceptance",
+        "major": "Medicine"
+      },
+      {
+        "id": 12,
+        "email": "Jayne_Kuhic@sydney.com",
+        "status": "Conditional Acceptance",
+        "major": "Medicine"
+      },
+      {
+        "id": 13,
+        "email": "Eliseo@gardner.biz",
+        "status": "Initial Acceptance",
+        "major": "Medicine"
+      },
+      {
+        "id": 14,
+        "email": "Jayne_Kuhic@sydney.com",
+        "status": "Conditional Acceptance",
+        "major": "Medicine"
+      },
+      {
+        "id": 15,
+        "email": "Eliseo@gardner.biz",
+        "status": "Initial Acceptance",
+        "major": "Medicine"
+      },
+      {
+        "id": 16,
+        "email": "Jayne_Kuhic@sydney.com",
+        "status": "Conditional Acceptance",
+        "major": "Medicine"
+      }
+  ]
